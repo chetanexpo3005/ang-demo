@@ -1,0 +1,17 @@
+<div class="jumbotron text-center" *ngIf="isVisible">
+    <h1>My First Bootstrap Page</h1>
+    <p>Resize this responsive page to see the effect!</p>
+</div>
+<div class="jumbotron text-center" *ngIf="isDivVisible()">
+    <h1>My First 2</h1>
+    <p>Resize this responsive page to see the effect!</p>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        <button (click)="hide()">hide</button>
+    </div>
+    <div class="col-md-2">
+        <button (click)="isVisible = true">show</button>
+    </div>
+</div>
