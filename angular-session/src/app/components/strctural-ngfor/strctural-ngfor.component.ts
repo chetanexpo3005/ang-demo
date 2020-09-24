@@ -8,15 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class StrcturalNgforComponent implements OnInit {
 
   cityList: string[];
+  city: string;
   constructor() {
+    this.city = '';
     this.cityList = [];
-    this.cityList.push('Nagpur');
-    this.cityList.push('Pune');
-    this.cityList.push('Mumbai');
-    this.cityList.push('Panji');
-    this.cityList.push('Goa');
+     
   }
 
+  addCity() {
+    debugger;
+    this.cityList.push(this.city);
+    this.city = '';
+  }
   getCityList() {
     const stateList = ['Mh', 'Goa', 'Punjab'];
     return stateList;

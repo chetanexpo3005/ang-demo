@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { FormsModule } from '@angular/forms';
+
 import { StructuralDirComponent } from './components/structural-dir/structural-dir.component';
 import { StrcturalNgforComponent } from './components/strctural-ngfor/strctural-ngfor.component';
 
@@ -14,7 +17,8 @@ import { StrcturalNgforComponent } from './components/strctural-ngfor/strctural-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
