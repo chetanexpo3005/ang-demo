@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-strctural-ngfor',
@@ -9,14 +10,12 @@ export class StrcturalNgforComponent implements OnInit {
 
   cityList: string[];
   city: string;
-  constructor() {
+  constructor(private activeRoute: ActivatedRoute) {
     this.city = '';
     this.cityList = [];
-     
   }
 
   addCity() {
-    debugger;
     this.cityList.push(this.city);
     this.city = '';
   }
@@ -25,6 +24,11 @@ export class StrcturalNgforComponent implements OnInit {
     return stateList;
   }
   ngOnInit() {
+    debugger;
+    const routeData = this.activeRoute;
+  //   this.activatedroute.data.subscribe(data => {
+  //     this.product=data;
+  // })
   }
 
 }

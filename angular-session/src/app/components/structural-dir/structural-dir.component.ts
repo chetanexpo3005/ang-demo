@@ -15,15 +15,12 @@ export class StructuralDirComponent implements OnInit {
   ngOnInit() {
   }
   hide() {
-    debugger;
     this.isVisible = false;
   }
   show() {
-    debugger;
     this.isVisible = true;
   }
   isDivVisible() {
-    debugger;
     return this.isVisible;
   }
 }

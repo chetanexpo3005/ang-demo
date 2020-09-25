@@ -1,5 +1,14 @@
- <!-- <app-structural-dir></app-structural-dir> -->
-
-<div class="container"> 
-            <app-strctural-ngfor></app-strctural-ngfor> 
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" >Demo</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a routerLink = "ngfor"  >Ng for</a></li>
+            <li><a routerLink = "ngif">ng If</a></li> 
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <router-outlet></router-outlet>
 </div>
