@@ -9,12 +9,14 @@ import { RouterModule} from '@angular/router';
 
 import { StructuralDirComponent } from './components/structural-dir/structural-dir.component';
 import { StrcturalNgforComponent } from './components/strctural-ngfor/strctural-ngfor.component';
+import { NgClassComponent } from './components/ng-class/ng-class.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StructuralDirComponent,
-    StrcturalNgforComponent
+    StrcturalNgforComponent,
+    NgClassComponent
   ],
   imports: [
     BrowserModule,

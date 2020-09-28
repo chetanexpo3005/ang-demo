@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StrcturalNgforComponent } from './components/strctural-ngfor/strctural-ngfor.component';
 import { StructuralDirComponent } from './components/structural-dir/structural-dir.component';
+import { NgClassComponent } from './components/ng-class/ng-class.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
     path: 'ngif',
     component: StructuralDirComponent,
     data : { id: '2', name: 'if'}
+  },
+  {
+    path: 'ngclass',
+    component: NgClassComponent
   }
 ];
 

@@ -1,0 +1,57 @@
+<div class="row">
+    <div [ngClass]="isSidepanel?'col-md-8':'col-md-12'">
+        <div class="card  ">
+            <div class="card-header bg-primary text-white">
+                <div class="row">
+                    <div class="col-md-6">
+                        Company List
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <button class="btn btn-success" (click)="addCompany()">Add Company</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="tabel table-bordered" style="width: 70%">
+                    <tr>
+                        <th>
+                            Sr No
+                        </th>
+                        <th>
+                            Company
+                        </th>
+                    </tr>
+                    <tr *ngFor="let comp of companyList;let i=index">
+                        <td>
+                            {{i+ 1}}
+                        </td>
+                        <td>
+                            {{comp}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-footer">Footer</div>
+        </div>
+    </div>
+    <div class="col-md-4" *ngIf="isSidepanel">
+        <div class="card  text-white">
+            <div class="card-header bg-success">
+                <div class="row">
+                    <div class="col-md-6">
+                        Add Company
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <button (click)="closeSidepanel()">Close </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <input type="text" placeholder="name" [(ngModel)]="company">
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success" (click)="saveCompany()">Save </button>
+            </div>
+        </div>
+    </div>
+</div>
