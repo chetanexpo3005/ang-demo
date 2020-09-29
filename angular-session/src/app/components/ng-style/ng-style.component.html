@@ -1,0 +1,49 @@
+<div class="jumbotron">
+    <h1  class="text-success">ngStyle </h1>
+    <p>Syntax: [ngStyle], [style.width.%],[style.width.px]</p>
+  </div>
+<div class="card  ">
+    <div class="card-header bg-primary text-white">
+        <div class="row">
+            <div class="col-md-6">
+                Employee List
+            </div>
+             
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="tabel table-bordered" style="width: 100%">
+            <tr>
+                <th>
+                    Sr No
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Contact
+                </th>
+                <th>
+                    Attendance
+                </th>
+            </tr>
+            <tr *ngFor="let emp of employeeList;let i=index">
+                <td style="color: blue">
+                    {{i+ 1}}
+                </td>
+                <td [ngStyle]="{'color':emp.attendance > 50 ? 'green' : 'red' }">
+                    {{emp.name}}
+                </td>
+                <td>
+                    {{emp.contact}}
+                </td>
+                <td>
+                    <div class="progress">
+                        <div class="progress-bar" [style.width.%]="emp.attendance"    >{{emp.attendance}}%</div>
+                      </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="card-footer"></div>
+</div>

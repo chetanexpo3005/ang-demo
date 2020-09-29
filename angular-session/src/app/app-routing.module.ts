@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { StrcturalNgforComponent } from './components/strctural-ngfor/strctural-ngfor.component';
 import { StructuralDirComponent } from './components/structural-dir/structural-dir.component';
 import { NgClassComponent } from './components/ng-class/ng-class.component';
+import { NgStyleComponent } from './components/ng-style/ng-style.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'ngclass',
     component: NgClassComponent
+  },
+  {
+    path: 'ngstyle',
+    component: NgStyleComponent
   }
 ];
 
