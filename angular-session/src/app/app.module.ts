@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormsModule } from '@angular/forms';
+
 import { RouterModule} from '@angular/router';
+//for consuming API
+import { HttpClientModule } from '@angular/common/http';
 
 import { StructuralDirComponent } from './components/structural-dir/structural-dir.component';
 import { StrcturalNgforComponent } from './components/strctural-ngfor/strctural-ngfor.component';
 import { NgClassComponent } from './components/ng-class/ng-class.component';
 import { NgStyleComponent } from './components/ng-style/ng-style.component';
+import { CompanyComponent } from './components/company/company.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,15 @@ import { NgStyleComponent } from './components/ng-style/ng-style.component';
     StructuralDirComponent,
     StrcturalNgforComponent,
     NgClassComponent,
-    NgStyleComponent
+    NgStyleComponent,
+    CompanyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule
+    HttpClientModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

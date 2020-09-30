@@ -1,0 +1,43 @@
+<div class="jumbotron">
+    <h1 class="text-success">http clinet get api </h1>
+
+</div>
+<div class="card  ">
+    <div class="card-header bg-primary text-white">
+        <div class="row">
+            <div class="col-md-6">
+                Area List
+            </div>
+
+        </div>
+    </div>
+    <div class="card-body" *ngIf="!isLoader">
+        <table class="tabel table-bordered" style="width: 100%">
+            <tr>
+                <th>
+                    Area Id
+                </th>
+                <th>
+                    Area Name
+                </th>
+
+            </tr>
+            <tr *ngFor="let area of areaList">
+                <td> {{area.AreaId}}</td>
+                <td> {{area.AreaName}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="card-body" *ngIf="isLoader">
+        <div class="spinner-border text-muted"></div>
+        <div class="spinner-border text-primary"></div>
+        <div class="spinner-border text-success"></div>
+        <div class="spinner-border text-info"></div>
+        <div class="spinner-border text-warning"></div>
+        <div class="spinner-border text-danger"></div>
+        <div class="spinner-border text-secondary"></div>
+        <div class="spinner-border text-dark"></div>
+        <div class="spinner-border text-light"></div>
+    </div>
+    <div class="card-footer"></div>
+</div>

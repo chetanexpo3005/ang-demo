@@ -4,6 +4,7 @@ import { StrcturalNgforComponent } from './components/strctural-ngfor/strctural-
 import { StructuralDirComponent } from './components/structural-dir/structural-dir.component';
 import { NgClassComponent } from './components/ng-class/ng-class.component';
 import { NgStyleComponent } from './components/ng-style/ng-style.component';
+import { CompanyComponent } from './components/company/company.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'ngstyle',
     component: NgStyleComponent
+  } ,
+  {
+    path: 'httpClient',
+    component: CompanyComponent
   }
 ];
 
