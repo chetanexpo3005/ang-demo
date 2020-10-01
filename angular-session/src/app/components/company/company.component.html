@@ -1,30 +1,31 @@
 <div class="jumbotron">
     <h1 class="text-success">http clinet get api </h1>
-
 </div>
-<div class="card  ">
+<div class="card" *ngIf="!isSidePanel">
     <div class="card-header bg-primary text-white">
         <div class="row">
             <div class="col-md-6">
                 Area List
             </div>
-
+            <div class="col-md-6 text-right">
+                <button class="btn btn-success" (click)="addCompany()">Add Company</button>
+            </div>
         </div>
     </div>
     <div class="card-body" *ngIf="!isLoader">
         <table class="tabel table-bordered" style="width: 100%">
             <tr>
                 <th>
-                    Area Id
+                    Company Id
                 </th>
                 <th>
-                    Area Name
+                    Company Name
                 </th>
 
             </tr>
             <tr *ngFor="let area of areaList">
-                <td> {{area.AreaId}}</td>
-                <td> {{area.AreaName}}</td>
+                <td> {{area.CompanyId}}</td>
+                <td> {{area.CompanyName}}</td>
             </tr>
         </table>
     </div>
@@ -40,4 +41,21 @@
         <div class="spinner-border text-light"></div>
     </div>
     <div class="card-footer"></div>
+</div>
+
+<div class="card" *ngIf="isSidePanel">
+    <div class="card-header bg-primary text-white">
+        <div class="row">
+            <div class="col-md-6">
+                Add Company
+            </div>
+
+        </div>
+    </div>
+    <div class="card-body">
+        <input type="text" placeholder="name" [(ngModel)]="iCompany.CompanyName">
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-success" (click)="saveCompany()">Save </button>
+    </div>
 </div>
