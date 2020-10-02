@@ -1,61 +1,81 @@
 <div class="jumbotron">
-    <h1 class="text-success">http clinet get api </h1>
+    <h1 class="text-success">http Client Crud Operation </h1>
 </div>
-<div class="card" *ngIf="!isSidePanel">
-    <div class="card-header bg-primary text-white">
-        <div class="row">
-            <div class="col-md-6">
-                Area List
+<div class="row">
+    <div [ngClass]="isSidePanel?'col-md-8':'col-md-12'">
+        <div class="card  ">
+            <div class="card-header bg-primary text-white">
+                <div class="row">
+                    <div class="col-md-6">
+                        Company List
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <button class="btn btn-success" (click)="addCompany()">Add Company</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 text-right">
-                <button class="btn btn-success" (click)="addCompany()">Add Company</button>
+            <div class="card-body">
+                <table class="tabel table-bordered" style="width: 100%">
+                    <tr>
+                        <th>
+                            Sr No
+                        </th>
+                        <th>
+                            Company Id
+                        </th>
+                        <th>
+                            Company
+                        </th>
+                        <th class="text-center">
+                            Action
+                        </th>
+                    </tr>
+                    <tr *ngFor="let comp of companyList;let i= index">
+                        <td> {{i+1}}</td>
+                        <td> {{comp.CompanyId}}</td>
+                        <td> {{comp.CompanyName}}</td>
+                        <td class="text-center">
+                            <button class="btn btn-success mr-3" (click)="getCompanyById(comp.CompanyId)">Edit </button>
+                            <button class="btn btn-danger" (click)="deleteCompany(comp)">Delete </button>
+                        </td>
+                    </tr>
+                </table>
             </div>
+            <div class="card-footer"> </div>
         </div>
     </div>
-    <div class="card-body" *ngIf="!isLoader">
-        <table class="tabel table-bordered" style="width: 100%">
-            <tr>
-                <th>
-                    Company Id
-                </th>
-                <th>
-                    Company Name
-                </th>
-
-            </tr>
-            <tr *ngFor="let area of areaList">
-                <td> {{area.CompanyId}}</td>
-                <td> {{area.CompanyName}}</td>
-            </tr>
-        </table>
-    </div>
-    <div class="card-body" *ngIf="isLoader">
-        <div class="spinner-border text-muted"></div>
-        <div class="spinner-border text-primary"></div>
-        <div class="spinner-border text-success"></div>
-        <div class="spinner-border text-info"></div>
-        <div class="spinner-border text-warning"></div>
-        <div class="spinner-border text-danger"></div>
-        <div class="spinner-border text-secondary"></div>
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-
-<div class="card" *ngIf="isSidePanel">
-    <div class="card-header bg-primary text-white">
-        <div class="row">
-            <div class="col-md-6">
-                Add Company
+    <div class="col-md-4" *ngIf="isSidePanel">
+        <div class="card  ">
+            <div class="card-header bg-success text-white">
+                <div class="row">
+                    <div class="col-md-6">
+                        Add Company
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <button (click)="closeSidepanel()" class="btn btn-secondary">Close </button>
+                    </div>
+                </div>
             </div>
-
+            <div class="card-body">
+                <div class="row" *ngIf="iCompany.CompanyId != 0">
+                    <div class="col-md-12 form-group">
+                        <label>Company Id</label>
+                        <input type="text" class="form-control" placeholder="Company Name" [(ngModel)]="iCompany.CompanyId"
+                            disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Company Name</label>
+                        <input type="text" class="form-control" placeholder="name" [(ngModel)]="iCompany.CompanyName">
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <button class="btn btn-success" type="button" *ngIf="iCompany.CompanyId == 0" (click)="saveCompany()">Save </button>
+                <button class="btn btn-secondary" type="button" *ngIf="iCompany.CompanyId != 0" (click)="saveCompany()">Update
+                </button>
+            </div>
         </div>
-    </div>
-    <div class="card-body">
-        <input type="text" placeholder="name" [(ngModel)]="iCompany.CompanyName">
-    </div>
-    <div class="card-footer">
-        <button class="btn btn-success" (click)="saveCompany()">Save </button>
     </div>
 </div>
