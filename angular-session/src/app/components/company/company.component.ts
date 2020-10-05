@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import this to hit method
 import { HttpClient } from '@angular/common/http';
 import {ICompany} from '../../inteface/company';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-company',
@@ -14,6 +15,7 @@ export class CompanyComponent implements OnInit {
   companyList: any;
   isLoader: boolean;
   isSidePanel: boolean;
+  panCardPattern = '[A-Z]{5}[0-9]{4}[A-Z]{1}';
   constructor(private http: HttpClient) {
     this.companyList = [];
     this.isLoader = true;
@@ -55,14 +57,19 @@ export class CompanyComponent implements OnInit {
       console.log('error' + error);
     });
   }
-  saveCompany() {
-    this.http.post('http://storeapi.gerasim.in/api/Company/addCompany', this.iCompany).subscribe((result: any) => {
-      this.getCompany();
-      this.isSidePanel =  false;
-    }, error => {
-      console.log('error' + error);
-      this.isLoader = false;
-    });
+  saveCompany(form?: NgForm) {
+    debugger;
+    if (!form.invalid) {
+      this.http.post('http://storeapi.gerasim.in/api/Company/addCompany', this.iCompany).subscribe((result: any) => {
+        this.getCompany();
+        this.isSidePanel =  false;
+      }, error => {
+        console.log('error' + error);
+        this.isLoader = false;
+      });
+
+    }
+    
   }
   updateCompany() {
     this.http.put('http://storeapi.gerasim.in/api/Company/updateCompany', this.iCompany).subscribe((result: any) => {

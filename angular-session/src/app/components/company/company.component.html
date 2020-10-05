@@ -46,36 +46,51 @@
     </div>
     <div class="col-md-4" *ngIf="isSidePanel">
         <div class="card  ">
-            <div class="card-header bg-success text-white">
-                <div class="row">
-                    <div class="col-md-6">
-                        Add Company
-                    </div>
-                    <div class="col-md-6 text-right">
-                        <button (click)="closeSidepanel()" class="btn btn-secondary">Close </button>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="row" *ngIf="iCompany.CompanyId != 0">
-                    <div class="col-md-12 form-group">
-                        <label>Company Id</label>
-                        <input type="text" class="form-control" placeholder="Company Name" [(ngModel)]="iCompany.CompanyId"
-                            disabled>
+            <form autocomplete="off" #form="ngForm" (submit)="saveCompany(form)">
+                <div class="card-header bg-success text-white">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Add Company
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <button (click)="closeSidepanel()" class="btn btn-secondary">Close </button>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <label>Company Name</label>
-                        <input type="text" class="form-control" placeholder="name" [(ngModel)]="iCompany.CompanyName">
+                <div class="card-body">
+                    <div class="row" *ngIf="iCompany.CompanyId != 0">
+                        <div class="col-md-12 form-group">
+                            <label>Company Id</label>
+                            <input type="text" class="form-control" name="CompanyId" placeholder="Company Name"
+                                [(ngModel)]="iCompany.CompanyId" disabled>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Company Name -{{form.invalid}}</label>
+                            <input type="text" [pattern]="panCardPattern" class="form-control" #CompanyName="ngModel"
+                                minlength="10" required placeholder="name" name="CompanyName" [(ngModel)]="iCompany.CompanyName">
+
+                            <label style="color: red" *ngIf="CompanyName.touched && CompanyName.errors?.required">
+                                This is required
+                            </label>
+                            <label *ngIf="CompanyName.errors?.minlength">
+                                min char length is 10.
+                            </label>
+                            <label *ngIf="CompanyName.errors?.pattern">
+                                invalid Pattern
+                            </label>
+                            
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-footer text-center">
-                <button class="btn btn-success" type="button" *ngIf="iCompany.CompanyId == 0" (click)="saveCompany()">Save </button>
-                <button class="btn btn-secondary" type="button" *ngIf="iCompany.CompanyId != 0" (click)="saveCompany()">Update
-                </button>
-            </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-success" type="submit" [disabled]="form.invalid" *ngIf="iCompany.CompanyId == 0">Save
+                    </button>
+                    <button class="btn btn-secondary" type="button" *ngIf="iCompany.CompanyId != 0" (click)="saveCompany()">Update
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
