@@ -67,7 +67,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <label>Company Name -{{form.invalid}}</label>
+                            <label>Company Name </label>
                             <input type="text" [pattern]="panCardPattern" class="form-control" #CompanyName="ngModel"
                                 minlength="10" required placeholder="name" name="CompanyName" [(ngModel)]="iCompany.CompanyName">
 
@@ -80,7 +80,7 @@
                             <label *ngIf="CompanyName.errors?.pattern">
                                 invalid Pattern
                             </label>
-                            
+
                         </div>
                     </div>
                 </div>
