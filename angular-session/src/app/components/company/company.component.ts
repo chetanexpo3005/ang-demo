@@ -58,7 +58,6 @@ export class CompanyComponent implements OnInit {
     });
   }
   saveCompany(form?: NgForm) {
-    debugger;
     if (!form.invalid) {
       this.http.post('http://storeapi.gerasim.in/api/Company/addCompany', this.iCompany).subscribe((result: any) => {
         this.getCompany();
@@ -69,7 +68,6 @@ export class CompanyComponent implements OnInit {
       });
 
     }
-    
   }
   updateCompany() {
     this.http.put('http://storeapi.gerasim.in/api/Company/updateCompany', this.iCompany).subscribe((result: any) => {

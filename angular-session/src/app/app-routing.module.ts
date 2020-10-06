@@ -5,6 +5,7 @@ import { StructuralDirComponent } from './components/structural-dir/structural-d
 import { NgClassComponent } from './components/ng-class/ng-class.component';
 import { NgStyleComponent } from './components/ng-style/ng-style.component';
 import { CompanyComponent } from './components/company/company.component';
+import { PipeComponent } from './components/pipe/pipe.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'httpClient',
     component: CompanyComponent
+  },
+  {
+    path: 'pipe',
+    component: PipeComponent
   }
 ];
 

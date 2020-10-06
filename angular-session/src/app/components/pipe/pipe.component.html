@@ -1,0 +1,87 @@
+<div class="jumbotron text-center">
+        <h1>Angular Pipe</h1>
+        <p>Pipes are used to convert data as per need and display on browser </p>
+        <p> Some default pipes provided by angular as below</p>
+        <p> Command to create custom pipe <b>ng g p pipeName</b> </p>
+    </div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-3">
+                <p>Uppercase Pipe</p>
+            </div>
+            <div class="col-md-9">
+                <b>{{title | uppercase}}</b><br />
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <p>Lowercase Pipe</p>
+            </div>
+            <div class="col-md-9">
+                <b>{{title | lowercase}}</b>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <p>Date pipe</p>
+            </div>
+            <div class="col-md-9">
+                    <b>{{todaydate }}</b> - Original Date <br />
+                <b>{{todaydate | date:'d/M/y'}}</b> - format d/M/y <br />
+                <b>{{todaydate | date:'dd-MMMM'}}</b> - format dd-MMM <br />
+                <b>{{todaydate | date:'dd-MMM-yy'}}</b> - format dd-MMM-yy <br />
+                <b>{{todaydate | date:'dd-MMM-yyyy'}}</b> - format dd-MMM-yyyy <br />
+                <b>{{todaydate | date:'shortTime'}} </b>- short time
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-3">
+                <p>Currency Pipe</p>
+            </div>
+            <div class="col-md-9">
+                <b>{{6589.23 | currency:"USD"}}</b><br />
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <p>Decimal Pipe</p>
+            </div>
+            <div class="col-md-9">
+                <b>{{ 454.78787814 | number: '3.3-3' }}</b> // 3 is for main integer, 4 -4 are for integers to be
+                displayed.
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <p>Percent Pipe</p>
+            </div>
+            <div class="col-md-9">
+                <b>{{00.54565 | percent}}</b>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <p>Json Pipe</p>
+        <b>{{ jsonval | json }}</b>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <p>Slice Pipe</p>
+        <b>{{months | slice:0:6}}</b>
+        // here 2 and 6 refers to the start and the end index
+    </div>
+</div>
+<hr>

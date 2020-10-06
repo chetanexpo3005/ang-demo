@@ -15,6 +15,9 @@ import { StrcturalNgforComponent } from './components/strctural-ngfor/strctural-
 import { NgClassComponent } from './components/ng-class/ng-class.component';
 import { NgStyleComponent } from './components/ng-style/ng-style.component';
 import { CompanyComponent } from './components/company/company.component';
+import { PipeComponent } from './components/pipe/pipe.component';
+import { StartCapitalPipe } from './pipes/capitalFirst/start-capital.pipe'; 
+import { NaPipe } from './pipes/na/na.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { CompanyComponent } from './components/company/company.component';
     StrcturalNgforComponent,
     NgClassComponent,
     NgStyleComponent,
-    CompanyComponent
+    CompanyComponent,
+    PipeComponent,
+    StartCapitalPipe,
+    NaPipe
   ],
   imports: [
     BrowserModule,
