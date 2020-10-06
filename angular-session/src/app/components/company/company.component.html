@@ -32,7 +32,7 @@
                     </tr>
                     <tr *ngFor="let comp of companyList;let i= index">
                         <td> {{i+1}}</td>
-                        <td> {{comp.CompanyId |startCapital:'111'}}</td>
+                        <td> {{comp.CompanyId}}</td>
                         <td> {{comp.CompanyName | NaPipe | startCapital}}</td>
                         <td class="text-center">
                             <button class="btn btn-success mr-3" (click)="getCompanyById(comp.CompanyId)">Edit </button>
