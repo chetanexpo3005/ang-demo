@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-ng-class',
@@ -10,12 +11,20 @@ export class NgClassComponent implements OnInit {
   isSidepanel: boolean;
   companyList: string[];
   company: string;
-  constructor() {
+  constructor(private apiService: ApiService) {
     this.isSidepanel = false;
     this.companyList = [];
-   }
+  }
 
   ngOnInit() {
+  }
+
+  getCompany() {
+    this.apiService.getCompany().subscribe((res: any) => {
+      debugger;
+      const data = res;
+    }, error => {
+    });
   }
   addCompany() {
     this.isSidepanel = true;

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {ICompany} from '../../inteface/company';
 import { NgForm } from '@angular/forms';
-
+import {ApiService} from '../../services/api.service';
 @Component({
   selector: 'app-company',
   templateUrl: './company.component.html',
@@ -16,7 +16,7 @@ export class CompanyComponent implements OnInit {
   isLoader: boolean;
   isSidePanel: boolean;
   panCardPattern = '[A-Z]{5}[0-9]{4}[A-Z]{1}';
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private apiService: ApiService) {
     this.companyList = [];
     this.isLoader = true;
     this.initiCompany();
@@ -30,6 +30,7 @@ export class CompanyComponent implements OnInit {
 
   ngOnInit() {
     this.getCompany();
+    const name =  this.apiService.getPieValue();
   }
   addCompany() {
     this.isSidePanel =  true;
@@ -37,16 +38,19 @@ export class CompanyComponent implements OnInit {
   closeSidepanel() {
     this.isSidePanel = false;
   }
+
+
   getCompany() {
     this.isLoader = false;
-    this.http.get('http://storeapi.gerasim.in/api/Company/GetCompany').subscribe((result: any) => {
-      this.companyList = result;
+    this.apiService.getCompany().subscribe((res: any) => {
+      this.companyList = res;
       this.isLoader = false;
     }, error => {
-      console.log('error' + error);
       this.isLoader = false;
     });
   }
+
+
   getCompanyById(companyId) {
     this.initiCompany();
     this.http.get('http://storeapi.gerasim.in/api/Company/GetCompanyById/' + companyId).subscribe((result: any) => {
