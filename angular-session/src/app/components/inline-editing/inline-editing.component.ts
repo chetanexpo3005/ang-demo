@@ -50,24 +50,19 @@ export class InlineEditingComponent implements OnInit {
   }
 
   close(data) {
-    debugger;
     data.isEdit = false;
   }
   getCompanyById(data) {
-    debugger;
     data.isEdit = true;
     this.initiCompany();
   }
-  saveCompany(form?: NgForm) {
-    if (!form.invalid) {
-      this.http.post('http://storeapi.gerasim.in/api/Company/addCompany', this.iCompany).subscribe((result: any) => {
-        this.getCompany(); 
+  saveCompany(comp) {
+      this.http.post('http://storeapi.gerasim.in/api/Company/addCompany', comp).subscribe((result: any) => {
+        this.getCompany();
       }, error => {
         console.log('error' + error);
         this.isLoader = false;
       });
-
-    }
   }
   updateCompany() {
     this.http.put('http://storeapi.gerasim.in/api/Company/updateCompany', this.iCompany).subscribe((result: any) => {

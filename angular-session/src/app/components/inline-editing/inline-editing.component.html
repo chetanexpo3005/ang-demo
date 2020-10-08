@@ -23,7 +23,7 @@
                         <th>
                             Company Id
                         </th>
-                        <th>
+                        <th style="width: 320px">
                             Company
                         </th>
                         <th class="text-center">
@@ -38,19 +38,19 @@
                             <div *ngIf="!comp.isEdit">
                                     {{comp.CompanyName | NaPipe | startCapital}}
                             </div>
-                            <div *ngIf="comp.isEdit">
+                            <div *ngIf="comp.isEdit" class="pad-5">
                                 <input type="text" class="form-control" [(ngModel)]="comp.CompanyName" />
                             </div> 
                         </td>
 
                         <td class="text-center">
                                 <div *ngIf="!comp.isEdit">
-                                        <i class="fa fa-pencil-square-o font-20" (click)="getCompanyById(comp)" aria-hidden="true"></i>
-                                        <i class="fa fa-trash font-20" (click)="deleteCompany(comp)" aria-hidden="true"></i>
+                                        <i class="fa fa-pencil-square-o cursor font-20" (click)="getCompanyById(comp)" aria-hidden="true"></i>
+                                        <i class="fa fa-trash cursor font-20" (click)="deleteCompany(comp)" aria-hidden="true"></i>
                                 </div>
                                 <div *ngIf="comp.isEdit">
-                                        <i class="fa fa-check-circle-o font-20" (click)="getCompanyById(comp)" aria-hidden="true"></i>
-                                        <i class="fa fa-times font-20" (click)="close(comp)" aria-hidden="true"></i>
+                                        <i class="fa fa-check-circle-o cursor font-20" (click)="saveCompany(comp)" aria-hidden="true"></i>
+                                        <i class="fa fa-times cursor font-20" (click)="close(comp)" aria-hidden="true"></i>
                                 </div>
                                 
                         </td>
