@@ -18,6 +18,7 @@ import { CompanyComponent } from './components/company/company.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { StartCapitalPipe } from './pipes/capitalFirst/start-capital.pipe';
 import { NaPipe } from './pipes/na/na.pipe';
+import { InlineEditingComponent } from './components/inline-editing/inline-editing.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NaPipe } from './pipes/na/na.pipe';
     CompanyComponent,
     PipeComponent,
     StartCapitalPipe,
-    NaPipe
+    NaPipe,
+    InlineEditingComponent
   ],
   imports: [
     BrowserModule,
