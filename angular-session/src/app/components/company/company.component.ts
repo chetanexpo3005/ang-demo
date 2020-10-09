@@ -12,7 +12,7 @@ import {ApiService} from '../../services/api.service';
 export class CompanyComponent implements OnInit {
 
   iCompany: ICompany;
-  companyList: any;
+  companyList: ICompany [];
   isLoader: boolean;
   isSidePanel: boolean;
   panCardPattern = '[A-Z]{5}[0-9]{4}[A-Z]{1}';
@@ -38,6 +38,15 @@ export class CompanyComponent implements OnInit {
   closeSidepanel() {
     this.isSidePanel = false;
   }
+
+
+
+
+  getSingleRecord() {
+
+  }
+
+
 
 
   getCompany() {

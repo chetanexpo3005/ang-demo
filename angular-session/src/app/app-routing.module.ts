@@ -7,6 +7,7 @@ import { NgStyleComponent } from './components/ng-style/ng-style.component';
 import { CompanyComponent } from './components/company/company.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { InlineEditingComponent } from './components/inline-editing/inline-editing.component';
+import { TypescriptComponent } from './components/typescript/typescript.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'inline-edit',
     component: InlineEditingComponent
+  },
+  {
+    path: 'typescirpt',
+    component: TypescriptComponent
   }
 ];
 

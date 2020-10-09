@@ -30,6 +30,8 @@ export class InlineEditingComponent implements OnInit {
     const name =  this.apiService.getPieValue();
   }
   addCompany() {
+    this.iCompany['isEdit'] = true;
+    this.companyList.unshift(this.iCompany);
   }
   closeSidepanel() {
   }
