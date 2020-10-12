@@ -1,0 +1,41 @@
+<div class="card  ">
+  <div class="card-header bg-primary text-white">
+    <div class="row">
+      <div class="col-md-6">
+        Company List
+      </div>
+      <div class="col-md-6 text-right">
+        <p-calendar [(ngModel)]="value"></p-calendar>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <p-table #dt [value]="companyList" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5,10,15]" [showCurrentPageReport]="true"
+    [globalFilterFields]="['CompanyId','CompanyName']"
+     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
+     <ng-template pTemplate="caption">
+      <div class="table-header">
+          List of Customers
+          <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Global Search" />
+          </span>
+      </div>
+  </ng-template>
+     <ng-template pTemplate="header">
+        <tr>
+          <th>Sr No</th>
+          <th>Company</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-customer>
+        <tr>
+          <td>{{customer.CompanyId}}</td>
+          <td>{{customer.CompanyName}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+  </div>
+  <div class="card-footer"> </div>
+</div>

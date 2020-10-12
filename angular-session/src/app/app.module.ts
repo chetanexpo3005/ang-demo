@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule} from '@angular/router';
 // for consuming API
 import { HttpClientModule } from '@angular/common/http';
@@ -20,7 +20,9 @@ import { StartCapitalPipe } from './pipes/capitalFirst/start-capital.pipe';
 import { NaPipe } from './pipes/na/na.pipe';
 import { InlineEditingComponent } from './components/inline-editing/inline-editing.component';
 import { TypescriptComponent } from './components/typescript/typescript.component';
-
+import { PrimeTableComponent } from './components/prime-table/prime-table.component';
+import {TableModule} from 'primeng/table';
+import {CalendarModule} from 'primeng/calendar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,8 @@ import { TypescriptComponent } from './components/typescript/typescript.componen
     StartCapitalPipe,
     NaPipe,
     InlineEditingComponent,
-    TypescriptComponent
+    TypescriptComponent,
+    PrimeTableComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,9 @@ import { TypescriptComponent } from './components/typescript/typescript.componen
     FormsModule,
     HttpClientModule,
     RouterModule,
+    BrowserAnimationsModule,
+    TableModule,
+    CalendarModule
   ],
   providers: [
   ],

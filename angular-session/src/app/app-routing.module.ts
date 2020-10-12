@@ -8,6 +8,7 @@ import { CompanyComponent } from './components/company/company.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { InlineEditingComponent } from './components/inline-editing/inline-editing.component';
 import { TypescriptComponent } from './components/typescript/typescript.component';
+import { PrimeTableComponent } from './components/prime-table/prime-table.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'typescirpt',
     component: TypescriptComponent
+  },
+  {
+    path: 'primeTable',
+    component: PrimeTableComponent
   }
 ];
 
