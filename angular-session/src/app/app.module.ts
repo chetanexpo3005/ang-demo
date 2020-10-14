@@ -23,6 +23,8 @@ import { TypescriptComponent } from './components/typescript/typescript.componen
 import { PrimeTableComponent } from './components/prime-table/prime-table.component';
 import {TableModule} from 'primeng/table';
 import {CalendarModule} from 'primeng/calendar';
+import {DropdownModule} from 'primeng/dropdown';
+import {MultiSelectModule} from 'primeng/multiselect';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,9 @@ import {CalendarModule} from 'primeng/calendar';
     RouterModule,
     BrowserAnimationsModule,
     TableModule,
-    CalendarModule
+    CalendarModule,
+    DropdownModule,
+    MultiSelectModule
   ],
   providers: [
   ],
