@@ -25,6 +25,8 @@ import {TableModule} from 'primeng/table';
 import {CalendarModule} from 'primeng/calendar';
 import {DropdownModule} from 'primeng/dropdown';
 import {MultiSelectModule} from 'primeng/multiselect';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,9 @@ import {MultiSelectModule} from 'primeng/multiselect';
     NaPipe,
     InlineEditingComponent,
     TypescriptComponent,
-    PrimeTableComponent
+    PrimeTableComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

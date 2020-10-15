@@ -1,0 +1,29 @@
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-form-title">
+        <span class="login100-form-title-1">
+          Login
+        </span>
+      </div>
+      <form class="login100-form validate-form">
+        <div class="wrap-input100 validate-input m-b-26">
+          <span class="label-input100">User Id</span>
+          <input class="input100" type="text" name="EmailId" placeholder="Enter Email Id" [(ngModel)]="iLogin.UserName">
+          <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input m-b-18">
+          <span class="label-input100">Password</span>
+          <input class="input100" name="Password" type="password" placeholder="Enter Password"
+            [(ngModel)]="iLogin.Password">
+          <span class="focus-input100"> </span>
+        </div>
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn" type="submit" (click)="onLogin()">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
