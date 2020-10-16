@@ -27,6 +27,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './services/auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import { HomeComponent } from './components/home/home.component';
     MultiSelectModule
   ],
   providers: [
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

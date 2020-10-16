@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
     debugger;
     if (this.iLogin.UserName === 'admin' && this.iLogin.Password === 'admin') {
       this.router.navigateByUrl('ngfor');
+      localStorage.setItem('loginId', this.iLogin.UserName);
+      sessionStorage.setItem('loginId', this.iLogin.UserName);
     } else {
       alert('Wrong details');
     }

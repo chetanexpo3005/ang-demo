@@ -11,6 +11,7 @@ import { TypescriptComponent } from './components/typescript/typescript.componen
 import { PrimeTableComponent } from './components/prime-table/prime-table.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -22,7 +23,8 @@ const routes: Routes = [
       {
         path: 'ngfor',
         component: StrcturalNgforComponent,
-        data : { id: '1', name: 'for'}
+        data : { id: '1', name: 'for'},
+        canActivate: [AuthGuard]
       },
       {
         path: 'ngif',
