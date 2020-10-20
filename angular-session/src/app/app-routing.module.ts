@@ -19,12 +19,12 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'ngfor',
         component: StrcturalNgforComponent,
-        data : { id: '1', name: 'for'},
-        canActivate: [AuthGuard]
+        data : { id: '1', name: 'for'}
       },
       {
         path: 'ngif',

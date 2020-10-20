@@ -9,8 +9,8 @@ export class AuthGuard implements CanActivate  {
 
   currentUser: any;
   constructor(private router: Router) {
-
   }
+
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     debugger;
     console.log(this.router.url);
